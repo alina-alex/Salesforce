@@ -1,0 +1,30 @@
+.section{
+    page-break-inside: avoid;
+    page-break-before: always;
+  }
+  .section:first-child {
+    page-break-before: avoid;
+  }
+  @page {
+ @top-left {
+   content: element(header);
+ }
+
+ @bottom-left {
+   content: element(footer);
+ }
+}
+
+div.header {
+ padding: 10px;
+ width: 100%;
+ position: running(header);
+}
+
+div.footer {
+ display: block;
+ padding: 5px;
+ width: 100%;
+ position: running(footer);
+}
+  <dic class="wrapper"> <div class="section"></div> <div class="section"></div> <div class="section"></div> </div>
